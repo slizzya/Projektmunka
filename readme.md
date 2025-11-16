@@ -16,7 +16,10 @@ https://trello.com/b/Po7yIXuz
 
 ## Képanyag
 ![alt text](assets/template1.png)
+![alt text](assets/template2.png)
+![alt text](assets/template3.png)
+![alt text](assets/template4.png)
 
-## It a képanyag
 
 [Adott mappára link](assets/)
+
