@@ -24,3 +24,4 @@ https://trello.com/b/Po7yIXuz
 [A mappára a link](assets/)
 
 
+
