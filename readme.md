@@ -21,5 +21,6 @@ https://trello.com/b/Po7yIXuz
 ![alt text](assets/template4.png)
 
 
-[Adott mappára link](assets/)
+[A mappára a link](assets/)
+
 
