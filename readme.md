@@ -14,8 +14,9 @@ Feltűntetett részleg azoknak a cégeknek akik a fesztiválon feltűnnek/támog
 ## Trello
 https://trello.com/b/Po7yIXuz
 
-## Így állunk most
-![alt text](assets/image.png)
+## Képanyag
+![alt text](assets/template1.png)
 
 ## It a képanyag
+
 [Adott mappára link](assets/)
