@@ -13,15 +13,21 @@
 <body>
     <main class="container text-center">
         <h1>Artists</h1>
-        <div class="row" id="artistok">
-            <div class="col" id="carti">
-                <img src="képek/carti.png" class="img-thumbnail" alt="carti" title="carti">
+        <div class="carousel-wrapper">
+            <div id="artistCarousel" class="carousel-container">
+                <div class="carousel-card" id="carti">
+                    <img src="képek/carti.png" class="carousel-img"  id="cartikep" alt="carti" title="carti">
+                </div>
+                <div class="carousel-card" id="yeat">
+                    <img src="képek/yeat.png" class="carousel-img" id="yeatkep" alt="yeat" title="yeat">
+                </div>
+                <div class="carousel-card" id="ken">
+                    <img src="képek/ken.png" class="carousel-img" id="kenkep" alt="ken" title="ken">
+                </div>
             </div>
-            <div class="col" id="yeat">
-                <img src="képek/yeat.png" class="img-thumbnail" alt="yeat" title="yeat">
-            </div>
-            <div class="col" id="ken">
-                <img src="képek/ken.png" class="img-thumbnail" alt="ken" title="ken">
+            <div class="carousel-controls">
+                <button id="prevBtn" class="carousel-btn">Left</button>
+                <button id="nextBtn" class="carousel-btn">Right</button>
             </div>
         </div>
         <div class="row">
@@ -35,18 +41,22 @@
             </div>
             <div class="row">
                 <div class="col">
-                    
+                    <img src="képek/cartipfp.png" class="img-thumbnail" id="cartipfp" alt="cartipfp" title="cartipfp">
                 </div>
                 <div class="col">
-
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat excepturi, sit magni rem
+                    laboriosam assumenda fugit aut minima, earum odit officia voluptatem possimus dolorem? Ipsum consequatur
+                    pariatur saepe quaerat.
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat excepturi, sit magni rem
+                    laboriosam assumenda fugit aut minima, earum odit officia voluptatem possimus dolorem? Ipsum consequatur
+                    pariatur saepe quaerat.
                 </div>
                 <div class="col">
-                    
+                    <img src="képek/kenpfp.png" class="img-thumbnail" id="kenpfp" alt="kenpfp" title="kenpfp">
                 </div>
             </div>
         </div>
@@ -78,6 +88,61 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <script>
+        const cards = document.querySelectorAll('.carousel-card');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const carousel = document.getElementById('artistCarousel');
+        
+        let cardOrder = ['carti', 'yeat', 'ken']; // left, center, right
+
+        function updatePositions() {
+            cards.forEach(card => {
+                card.classList.remove('center', 'left', 'right');
+            });
+            
+            // Assign positions based on current order
+            document.getElementById(cardOrder[0]).classList.add('left');
+            document.getElementById(cardOrder[1]).classList.add('center');
+            document.getElementById(cardOrder[2]).classList.add('right');
+        }
+
+        function rotateRight() {
+            // Add animation class
+            cards.forEach(card => card.classList.add('animating'));
+            
+            // Rotate order clockwise: right -> center -> left -> right
+            const last = cardOrder.pop();
+            cardOrder.unshift(last);
+            
+            // Update positions after animation
+            setTimeout(() => {
+                updatePositions();
+                cards.forEach(card => card.classList.remove('animating'));
+            }, 600);
+        }
+
+        function rotateLeft() {
+            // Add animation class
+            cards.forEach(card => card.classList.add('animating'));
+            
+            // Rotate order counter-clockwise: left -> right -> center -> left
+            const first = cardOrder.shift();
+            cardOrder.push(first);
+            
+            // Update positions after animation
+            setTimeout(() => {
+                updatePositions();
+                cards.forEach(card => card.classList.remove('animating'));
+            }, 600);
+        }
+
+        // Initialize positions
+        updatePositions();
+
+        prevBtn.addEventListener('click', rotateLeft);
+        nextBtn.addEventListener('click', rotateRight);
+    </script>
 </body>
 
 </html>

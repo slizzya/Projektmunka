@@ -1,17 +1,115 @@
 body{
 
 }
-#artistok{
+#prevBtn{
+    
+}
+#nextBtn{
+    
+}
+.carousel-wrapper {
     margin-top: 100px;
 }
-#yeat{
-    width: 720px;
-    height: 720px;
+.carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
 }
-#carti, #ken{
-    margin-top: 50px;
+.carousel-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.carousel-btn:hover {
+    background-color: #0056b3;
+}
+#artistCarousel{
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    height: 1000px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+.carousel-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.carousel-card{
+    position: absolute;
+    width: 100%;
+    height: 1000px;
+    border-radius: 10px;
+    transition: all 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.carousel-card.center {
+    z-index: 30;
+    width: 100%;
+    height: 1000px;
+    filter: brightness(1);
+}
+.carousel-card.left {
+    z-index: 20;
+    transform: translate(calc(-95% - 180px), -50%) scale(0.75);
+    filter: grayscale(1);
+}
+.carousel-card.right {
+    z-index: 20;
+    transform: translate(calc(-5% + 180px), -50%) scale(0.75);
+    filter: grayscale(1);
+}
+
+@keyframes rotateCarousel {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.carousel-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 #yeatpfp{
     width: 250px;
     height: 250px;
+}
+#cartipfp{
+    width: 250px;
+    height: 250px;
+}
+#kenpfp{
+    width: 250px;
+    height: 250px;
+}
+#cartikep{
+    width: 70%;
+    height: 90%;
+}
+#yeatkep{
+    width: 70%;
+    height: 90%;
+}
+#kenkep{
+    width: 70%;
+    height: 90%;
 }
