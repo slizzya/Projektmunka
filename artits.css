@@ -2,13 +2,12 @@ body{
 
 }
 #prevBtn{
-    
 }
 #nextBtn{
-    
 }
 .carousel-wrapper {
     margin-top: 100px;
+    position: relative;
 }
 .carousel-controls {
     display: flex;

@@ -30,7 +30,7 @@
                 <button id="nextBtn" class="carousel-btn">Right</button>
             </div>
         </div>
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat excepturi, sit magni rem
                 laboriosam assumenda fugit aut minima, earum odit officia voluptatem possimus dolorem? Ipsum consequatur
@@ -94,28 +94,24 @@
         const nextBtn = document.getElementById('nextBtn');
         const carousel = document.getElementById('artistCarousel');
         
-        let cardOrder = ['carti', 'yeat', 'ken']; // left, center, right
+        let cardOrder = ['carti', 'yeat', 'ken'];
 
         function updatePositions() {
             cards.forEach(card => {
                 card.classList.remove('center', 'left', 'right');
             });
             
-            // Assign positions based on current order
             document.getElementById(cardOrder[0]).classList.add('left');
             document.getElementById(cardOrder[1]).classList.add('center');
             document.getElementById(cardOrder[2]).classList.add('right');
         }
 
         function rotateRight() {
-            // Add animation class
             cards.forEach(card => card.classList.add('animating'));
             
-            // Rotate order clockwise: right -> center -> left -> right
             const last = cardOrder.pop();
             cardOrder.unshift(last);
             
-            // Update positions after animation
             setTimeout(() => {
                 updatePositions();
                 cards.forEach(card => card.classList.remove('animating'));
@@ -123,21 +119,18 @@
         }
 
         function rotateLeft() {
-            // Add animation class
             cards.forEach(card => card.classList.add('animating'));
-            
-            // Rotate order counter-clockwise: left -> right -> center -> left
+
             const first = cardOrder.shift();
             cardOrder.push(first);
             
-            // Update positions after animation
+
             setTimeout(() => {
                 updatePositions();
                 cards.forEach(card => card.classList.remove('animating'));
             }, 600);
         }
 
-        // Initialize positions
         updatePositions();
 
         prevBtn.addEventListener('click', rotateLeft);
