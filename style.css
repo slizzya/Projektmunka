@@ -14,27 +14,3 @@ body{
     width: 200px;
 }
 
-/* Vanta background container */
-#fog{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    pointer-events: none;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    background: transparent;
-}
-
-header, main, footer {
-    position: relative;
-    z-index: 1;
-}
-#egesznav{
-    background-color: transparent !important;
-}
