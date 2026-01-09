@@ -16,7 +16,7 @@
         <div class="carousel-wrapper">
             <div id="artistCarousel" class="carousel-container">
                 <div class="carousel-card" id="carti">
-                    <img src="képek/carti.png" class="carousel-img"  id="cartikep" alt="carti" title="carti">
+                    <img src="képek/carti.png" class="carousel-img" id="cartikep" alt="carti" title="carti">
                 </div>
                 <div class="carousel-card" id="yeat">
                     <img src="képek/yeat.png" class="carousel-img" id="yeatkep" alt="yeat" title="yeat">
@@ -30,34 +30,32 @@
                 <button id="nextBtn" class="carousel-btn">Right</button>
             </div>
         </div>
-        <div class="row align-items-center">
+        <div class="row row-cols-2 align-items-center">
             <div class="col">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat excepturi, sit magni rem
+                asdasd Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat excepturi, sit magni rem
                 laboriosam assumenda fugit aut minima, earum odit officia voluptatem possimus dolorem? Ipsum consequatur
                 pariatur saepe quaerat.
             </div>
             <div class="col" id="yeatszoveg">
                 <img src="képek/yeatpfp.png" class="img-fluid" id="yeatpfp" alt="yeatpfp" title="yeatpfp">
             </div>
-            <div class="row">
-                <div class="col">
-                    <img src="képek/cartipfp.png" class="img-fluid" id="cartipfp" alt="cartipfp" title="cartipfp">
-                </div>
-                <div class="col">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat excepturi, sit magni rem
-                    laboriosam assumenda fugit aut minima, earum odit officia voluptatem possimus dolorem? Ipsum consequatur
-                    pariatur saepe quaerat.
-                </div>
+            <div class="col">
+                <img src="képek/cartipfp.png" class="img-fluid" id="cartipfp" alt="cartipfp" title="cartipfp">
             </div>
-            <div class="row">
-                <div class="col">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat excepturi, sit magni rem
-                    laboriosam assumenda fugit aut minima, earum odit officia voluptatem possimus dolorem? Ipsum consequatur
-                    pariatur saepe quaerat.
-                </div>
-                <div class="col">
-                    <img src="képek/kenpfp.png" class="img-fluid" id="kenpfp" alt="kenpfp" title="kenpfp">
-                </div>
+            <div class="col">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat excepturi, sit magni rem
+                laboriosam assumenda fugit aut minima, earum odit officia voluptatem possimus dolorem? Ipsum
+                consequatur
+                pariatur saepe quaerat.
+            </div>
+            <div class="col">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat excepturi, sit magni rem
+                laboriosam assumenda fugit aut minima, earum odit officia voluptatem possimus dolorem? Ipsum
+                consequatur
+                pariatur saepe quaerat.
+            </div>
+            <div class="col">
+                <img src="képek/kenpfp.png" class="img-fluid" id="kenpfp" alt="kenpfp" title="kenpfp">
             </div>
         </div>
     </main>
@@ -93,14 +91,14 @@
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const carousel = document.getElementById('artistCarousel');
-        
+
         let cardOrder = ['carti', 'yeat', 'ken'];
 
         function updatePositions() {
             cards.forEach(card => {
                 card.classList.remove('center', 'left', 'right');
             });
-            
+
             document.getElementById(cardOrder[0]).classList.add('left');
             document.getElementById(cardOrder[1]).classList.add('center');
             document.getElementById(cardOrder[2]).classList.add('right');
@@ -108,10 +106,10 @@
 
         function rotateRight() {
             cards.forEach(card => card.classList.add('animating'));
-            
+
             const last = cardOrder.pop();
             cardOrder.unshift(last);
-            
+
             setTimeout(() => {
                 updatePositions();
                 cards.forEach(card => card.classList.remove('animating'));
@@ -123,7 +121,7 @@
 
             const first = cardOrder.shift();
             cardOrder.push(first);
-            
+
 
             setTimeout(() => {
                 updatePositions();

@@ -2,6 +2,7 @@ body{
 
 }
 #prevBtn{
+
 }
 #nextBtn{
 }
@@ -36,11 +37,6 @@ body{
     height: 1000px;
     margin: 0 auto;
     perspective: 1000px;
-}
-.carousel-container{
-    position: relative;
-    width: 100%;
-    height: 100%;
 }
 .carousel-card{
     position: absolute;
