@@ -1,16 +1,198 @@
-body{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0015 0%, #1a0033 25%, #0d001f 50%, #1a0033 75%, #0a0015 100%);
+    background-attachment: fixed;
+    color: #d8b4fe;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at 20% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 40% 0%, rgba(147, 51, 234, 0.06) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+main {
+    position: relative;
+    z-index: 2;
+    margin-top: 80px;
+}
+
+.navbar {
+    background: rgba(15, 5, 25, 0.65) !important;
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+    padding: 0.35rem 0 !important;
+    position: relative;
+    z-index: 100;
+    height: 9vh;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-nav {
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.navbar-toggler {
+    position: absolute;
+    left: 1rem;
+    border: 2px solid #a855f7 !important;
+    padding: 0.3rem 0.55rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.25rem rgba(168, 85, 247, 0.25) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(216,180,254,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+@media (max-width: 991px) {
+    .navbar-brand {
+        display: none;
+    }
+    
+    .navbar-nav {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0 !important;
+    }
+    
+    .navbar .container-fluid {
+        justify-content: flex-start;
+    }
+}
+
+.nav-link {
+    color: #d8b4fe !important;
+    font-weight: 500;
+    font-size: 1.2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.2rem 0 !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background: linear-gradient(90deg, #a855f7, #d946ef);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover {
+    color: #d946ef !important;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-brand {
+    height: 16px;
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.3));
+    height: 30px;
+    max-width: 180px;
+    margin: 40px auto 30px;
+    filter: drop-shadow(0 0 25px rgba(168, 85, 247, 0.5));
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.container p {
+    background: rgba(30, 10, 50, 0.35);
+    backdrop-filter: blur(12px);
+    padding: 35px 45px;
+    border-radius: 18px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #d4c4df;
+    margin: 30px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.btn {
+    padding: 12px 45px !important;
+    font-weight: 600;
+    border-radius: 50px !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: none !important;
+    font-size: 0.9rem;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #a855f7, #d946ef) !important;
+    color: white !important;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #d946ef, #a855f7) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(168, 85, 247, 0.5) !important;
+}
+
+.btn-secondary:active {
+    transform: translateY(-1px);
 }
 #logokep{
-    height: 200px;
-    width: 400px;
-}   
-#jegynav{
-    margin-right: auto;
-    width: 200px;
+    height: 3.5vh;
+    width: auto;
+    align-items: center;
 }
-#eloadoknav{
-    margin-left: auto;
-    width: 200px;
+#fokep{
+    height: 55vh;
+    width: auto;
+    align-items: center;
 }
+
 
