@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Artists</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="artits.css">
+</head>
+
+<body>
+    <main class="container text-center">
+        <div class="carousel-wrapper">
+            <div id="artistCarousel" class="carousel-container">
+                <div class="carousel-card" id="carti">
+                    <img src="képek/carti.png" class="carousel-img" id="cartikep" alt="carti" title="carti">
+                </div>
+                <div class="carousel-card" id="yeat">
+                    <img src="képek/yeat.png" class="carousel-img" id="yeatkep" alt="yeat" title="yeat">
+                </div>
+                <div class="carousel-card" id="ken">
+                    <img src="képek/ken.png" class="carousel-img" id="kenkep" alt="ken" title="ken">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button id="prevBtn" class="carousel-btn">Left</button>
+                <button id="nextBtn" class="carousel-btn">Right</button>
+            </div>
+        </div>
+        <div class="artists-container">
+            <div class="artist-card">
+                <img src="képek/yeatpfp.png" class="artist-img" alt="yeat">
+                <div class="artist-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat excepturi, sit magni rem laboriosam assumenda fugit aut minima, earum odit officia voluptatem possimus dolorem? Ipsum consequatur pariatur saepe quaerat.
+                </div>
+            </div>
+            <div class="artist-card">
+                <img src="képek/cartipfp.png" class="artist-img" alt="carti">
+                <div class="artist-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat excepturi, sit magni rem laboriosam assumenda fugit aut minima, earum odit officia voluptatem possimus dolorem? Ipsum consequatur pariatur saepe quaerat.
+                </div>
+            </div>
+            <div class="artist-card">
+                <img src="képek/kenpfp.png" class="artist-img" alt="ken">
+                <div class="artist-text">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quaerat excepturi, sit magni rem laboriosam assumenda fugit aut minima, earum odit officia voluptatem possimus dolorem? Ipsum consequatur pariatur saepe quaerat.
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        const cards = document.querySelectorAll('.carousel-card');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const carousel = document.getElementById('artistCarousel');
+
+        let cardOrder = ['carti', 'yeat', 'ken'];
+
+        function updatePositions() {
+            cards.forEach(card => {
+                card.classList.remove('center', 'left', 'right');
+            });
+
+            document.getElementById(cardOrder[0]).classList.add('left');
+            document.getElementById(cardOrder[1]).classList.add('center');
+            document.getElementById(cardOrder[2]).classList.add('right');
+        }
+
+        function rotateRight() {
+            cards.forEach(card => card.classList.add('animating'));
+
+            const last = cardOrder.pop();
+            cardOrder.unshift(last);
+
+            setTimeout(() => {
+                updatePositions();
+                cards.forEach(card => card.classList.remove('animating'));
+            }, 600);
+        }
+
+        function rotateLeft() {
+            cards.forEach(card => card.classList.add('animating'));
+
+            const first = cardOrder.shift();
+            cardOrder.push(first);
+
+
+            setTimeout(() => {
+                updatePositions();
+                cards.forEach(card => card.classList.remove('animating'));
+            }, 600);
+        }
+
+        updatePositions();
+
+        prevBtn.addEventListener('click', rotateLeft);
+        nextBtn.addEventListener('click', rotateRight);
+    </script>
+</body>
+
+</html>
