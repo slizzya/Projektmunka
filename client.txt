@@ -1,0 +1,11 @@
+user_id,name,email,phone
+1,Anna Kovacs,anna.kovacs@email.com,+3612345678
+2,Balazs Nagy,balazs.nagy@email.com,+36201234567
+3,Eszter Szabo,eszter.szabo@email.com,+36304567890
+4,David Toth,david.toth@email.com,+36701234567
+5,Reka Horvath,reka.horvath@email.com,+36205551234
+6,Peter Varga,peter.varga@email.com,+36301239876
+7,Zsofia Molnar,zsofia.molnar@email.com,+36705556789
+8,Gabor Kiss,gabor.kiss@email.com,+36207778899
+9,Noemi Farkas,noemi.farkas@email.com,+36309998877
+10,Adam Lakatos,adam.lakatos@email.com,+36706665544 
